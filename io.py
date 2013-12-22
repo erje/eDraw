@@ -90,6 +90,7 @@ save_fmt = {"ely" : save_ely, "svg" : save_svg}
 
 def save(savething, filename="noname", format="ely"):
     # First we wrap whatever was passed in a project
+    # using defaults (see class declaration)
     if savething.__class__.__name__ == "Project":
         project = savething
     elif savething.__class__.__name__ == "Structure":
@@ -114,28 +115,36 @@ def save(savething, filename="noname", format="ely"):
         raise TypeError("Did not pass a save-able object")
 
     # Then we pretty up the filename
-    format = format.lower().strip(".")
-    if format not in ["svg", "ely"]:
-        raise FormatError("Format " + format + " not supported!")
+    # And check that we support the output format. 
+    fformat = format
+    fformat = fformat.split(",")
+    fformat = [f.lower().strip(". ") for f in fformat]
+    for f in fformat:
+        if f not in ["svg", "ely"]:
+            raise FormatError("Format " + f + " not supported!")
 
     import os
     raw_filename = os.path.basename(filename)
 
-    if len(raw_filename.split(".")) == 2 and raw_filename.split(".")[1] == format:
-        filepath = filename
-    elif len(raw_filename.split(".")) == 2:
-        filepath = raw_filename.split(".")[0] + "." + format
-    elif len(raw_filename.split(".")) == 1:
-        filepath = filename + "." + format
+    filepath=["" for x in fformat]
+    for i, f in enumerate(fformat):
+        if len(raw_filename.split(".")) == 2:
+            filepath[i] = filename.split(".")[0] + "." + f
+        elif len(raw_filename.split(".")) == 1:
+            filepath[i] = filename + "." + f
 
     # Next we set the write field for all layers.
+    # We do this here, since we can be sure that
+    # the sample design is complete. Otherwise, we'd
+    # be obliged to insert code at each add etc...
     for structure in project:
         for layer in structure:
             layer.write_field()
 
     # Finally, we pass on project and filepath to the save routine for the
     # appropriate format
-    save_fmt[format](project, filepath)
+    for i, f in enumerate(fformat):
+        save_fmt[f](project, filepath[i])
                
 """
 def load(project, filename):

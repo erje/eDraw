@@ -30,5 +30,4 @@ for iy in range(ny):
                 mm_rc_a.add( draw.mm_rect_closed(width=w,bar=b,gap=g,chamfer=c).rotate(angle).move((mulx * ix + imulx) * (dx+w) + ix * mdx, (muly * iy + imuly) * (dy+w) + iy * mdy) )
         angle = angle + dangle
 
-edw.save(mm_rc_a, "/home/erje/Programs/eDraw/data/15.ely", format="ely")
-edw.save(mm_rc_a, "/home/erje/Programs/eDraw/data/15.svg", format="svg")
+edw.save(mm_rc_a, "/Users/erje/Programs/eDraw/data/15", format="ely, svg")

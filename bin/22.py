@@ -13,5 +13,4 @@ four_crosses.add(draw.cross(cx=100,cy=100,size=10))
 
 square.add(edw.crect(cx=50,cy=50,width=10,height=20))
 
-edw.save(align_and_square, "/home/erje/Programs/eDraw/data/22.ely", format="ely")
-edw.save(align_and_square, "/home/erje/Programs/eDraw/data/22.svg", format="svg")
+edw.save(align_and_square, "/Users/erje/Programs/eDraw/data/22", format="ely, svg")

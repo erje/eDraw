@@ -8,5 +8,4 @@ four_crosses.add(draw.cross(cx=25,cy=0,size=10))
 four_crosses.add(draw.cross(cx=0,cy=25,size=10))
 four_crosses.add(draw.cross(cx=25,cy=25,size=10))
 
-edw.save(four_crosses, "/home/erje/Programs/eDraw/data/5.ely", format="ely")
-edw.save(four_crosses, "/home/erje/Programs/eDraw/data/5.svg", format="svg")
+edw.save(four_crosses, "/Users/erje/Programs/eDraw/data/5", format="ely, svg")

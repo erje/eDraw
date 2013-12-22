@@ -1,13 +1,13 @@
 <?xml version='1.0' encoding='UTF-8'?>
 <ELAYOUT locked="false" name="Unnamed" version="1.0">
-  <VERSION created="20.12.2013 0:14:29" modified="20.12.2013 0:14:29" number="1.0"/>
+  <VERSION created="22.12.2013 18:24:56" modified="22.12.2013 18:24:56" number="1.0"/>
   <GRID horizontal="1" show="true" snap_to="false" vertical="1"/>
   <LAYER_LIST>
     <LAYER fill_color="#0000FF" fill_opacity="0.5" hidden="false" locked="false" name="sierpinski"/>
   </LAYER_LIST>
   <STRUCTURE_LIST>
     <STRUCTURE locked="false" name="Structure">
-      <VERSION created="20.12.2013 0:14:29" modified="20.12.2013 0:14:29" number="1.0"/>
+      <VERSION created="22.12.2013 18:24:56" modified="22.12.2013 18:24:56" number="1.0"/>
       <INSTANCE_LIST/>
       <LAYER_REFERENCE frame_cx="1093.5" frame_cy="1093.5" frame_size="2181.0" ref="sierpinski">
         <RECT dose_factor="1.0" height="729.0" width="729.0" x="729.0" y="729.0"/>

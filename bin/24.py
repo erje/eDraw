@@ -32,5 +32,4 @@ points_bottom = list(zip(x_samples, y_bottom))[::-1]
 
 stripe = edw.poly(points = points_top + points_bottom)
 
-edw.save(stripe, "/home/erje/Programs/eDraw/data/24.ely", format="ely")
-edw.save(stripe, "/home/erje/Programs/eDraw/data/24.svg", format="svg")
+edw.save(stripe, "/Users/erje/Programs/eDraw/data/24", format="ely, svg")

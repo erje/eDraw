@@ -22,5 +22,4 @@ def scarpet(layer, x=0, y=0, length=3**7, min_size=9):
 
 scarpet(sierpinski, x=0, y=0, length=3**7, min_size=9)
 
-edw.save(sierpinski, "/home/erje/Programs/eDraw/data/7.ely", format="ely")
-edw.save(sierpinski, "/home/erje/Programs/eDraw/data/7.svg", format="svg")
+edw.save(sierpinski, "/Users/erje/Programs/eDraw/data/7", format="ely, svg")

@@ -47,5 +47,4 @@ FM = sample_23.add(name="FM", fill_color="#00FF00")
 
 FM.add(edw.crect(cx=0,cy=0,width=20,height=20))
 
-edw.save(sample_23, "/home/erje/Programs/eDraw/data/23.ely", format="ely")
-edw.save(sample_23, "/home/erje/Programs/eDraw/data/23.svg", format="svg")
+edw.save(sample_23, "/Users/erje/Programs/eDraw/data/23", format="ely, svg")

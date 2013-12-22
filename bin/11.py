@@ -13,5 +13,4 @@ def frtree(layer, x1=300, y1=550, angle=-90, depth=9):
 
 frtree(tree, x1=300, y1=550, angle=-90, depth=12)
 
-edw.save(tree, "/home/erje/Programs/eDraw/data/11.ely", format="ely")
-edw.save(tree, "/home/erje/Programs/eDraw/data/11.svg", format="svg")
+edw.save(tree, "/Users/erje/Programs/eDraw/data/11.ely", format="ely, svg")
