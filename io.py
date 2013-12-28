@@ -8,9 +8,11 @@ def save_ely(project, filename):
 
     try:
         from lxml import etree
-        lxml_import = True
+	lxml_import = True
+	print("Found lxml, using for serialization.")
     except ImportError:
         lxml_import = False
+	print("Did not find lxml, defaulting to ElementTree for serialization.")
         import xml.etree.ElementTree as etree
 
     ELAYOUT = etree.Element( "ELAYOUT", {"locked" : str(project.locked).lower(), "name" : project.name, "version" : str(project.version)} )
@@ -112,7 +114,7 @@ def save(savething, filename="noname", format="ely"):
         project = proj()
         project.add(tmp_struct)
     else:
-        raise TypeError("Did not pass a save-able object")
+        raise TypeError("Did not pass a save-able object.")
 
     # Then we pretty up the filename
     # And check that we support the output format. 
@@ -136,13 +138,13 @@ def save(savething, filename="noname", format="ely"):
     # Next we set the write field for all layers.
     # We do this here, since we can be sure that
     # the sample design is complete. Otherwise, we'd
-    # be obliged to insert code at each add etc...
+    # be obliged to insert code at each add...
     for structure in project:
         for layer in structure:
             layer.write_field()
 
-    # Finally, we pass on project and filepath to the save routine for the
-    # appropriate format
+    # Finally, we pass on project and filepath to the 
+    # save routine for the appropriate format
     for i, f in enumerate(fformat):
         save_fmt[f](project, filepath[i])
                
@@ -150,7 +152,14 @@ def save(savething, filename="noname", format="ely"):
 def load(project, filename):
     Parses .ely file into interal classes
 
-    import xml.etree.ElementTree as etree
+    try:
+        from lxml import etree
+	lxml_import = True
+	print("Found lxml, using for parsing.")
+    except ImportError:
+        lxml_import = False
+	print("Did not find lxml, defaulting to ElementTree for parsing.")
+        import xml.etree.ElementTree as etree
 
     infile = etree.parse(filename)
     inroot = infile.getroot()
