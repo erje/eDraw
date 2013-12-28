@@ -7,7 +7,7 @@ class Project:
     A group of samples with an interrelated purpose. Corresponds to one eDraw ".ely" file. Contains many structures. Attributes which don't belong in the object-hierarchy (but which eDraw nevertheless requires, such as display grid attributes) are held as properties in the Project class.
     """
 
-    def __init__(self, structures = None, name = "Unnamed", locked = False, version = 1.0, grid_horizontal = 1, grid_vertical = 1, grid_show = True, grid_snap_to = False):
+    def __init__(self, structures = None, name = "Project", locked = False, version = 1.0, grid_horizontal = 1, grid_vertical = 1, grid_show = True, grid_snap_to = False):
         if structures == None:
             self.structures = []
         self.name = name
