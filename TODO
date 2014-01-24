@@ -1,0 +1,3 @@
+1. load .ely files
+2. save as gds2 files
+3. support all primitives (currently only rect, polygon, (poly)lines)
