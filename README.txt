@@ -10,7 +10,9 @@ http://continuum.io/downloads
 
 By default, Anaconda comes with python 2.7. You will need to create a python 3 environment using the conda command ( see http://continuum.io/blog/anaconda-python-3 ):
 
+'''bash
 $ conda create -py3k python=3 anaconda
+'''
 
 Running this command will install a python 3 environment "py3k". Once installed, you need to install eDraw's dependencies:
 
