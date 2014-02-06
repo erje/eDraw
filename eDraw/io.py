@@ -8,11 +8,11 @@ def save_ely(project, filename):
 
     try:
         from lxml import etree
-	lxml_import = True
-	print("Found lxml, using for serialization.")
+        lxml_import = True
+        print("Found lxml, using for serialization.")
     except ImportError:
         lxml_import = False
-	print("Did not find lxml, defaulting to ElementTree for serialization.")
+        print("Did not find lxml, defaulting to ElementTree for serialization.")
         import xml.etree.ElementTree as etree
 
     ELAYOUT = etree.Element( "ELAYOUT", {"locked" : str(project.locked).lower(), "name" : project.name, "version" : str(project.version)} )
