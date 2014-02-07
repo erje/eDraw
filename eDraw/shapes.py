@@ -25,8 +25,9 @@ class Polygon:
     An eDraw polygon shape.
     """
     tag = "POLYGON"
-    def __init__(self, points=None, dose_factor=1.0):
+    def __init__(self, points=None, dose_factor=1.0, area_fast = 0.0):
         self.dose_factor = dose_factor
+        self.area_fast = area_fast
         if points == None:
             # Careful here! 
             self.points = []
@@ -49,7 +50,7 @@ class Polygon:
 
     def get_attrib(self):
         import re
-        return {"dose_factor" : str(self.dose_factor), "points" : re.sub(r'[\[\]\,]', '', str(self.points))}
+        return {"dose_factor" : str(self.dose_factor), "points" : re.sub(r'[\[\]\,]', '', str(self.points)), "area_fast" : str(self.area_fast) + " deg"}
 
     def add(self, point):
         return self.points.append(point)
