@@ -68,6 +68,14 @@ class Polygon:
     def move(self, dx, dy):
         self.points = [ ( p[0] + dx, p[1] + dy ) for p in self.points]
         return self
+
+    def mirror_x(self, x=0):
+        self.points = [ ( x + (x - p[0]), p[1] ) for p in self.points]
+        return self
+
+    def mirror_y(self, y=0):
+        self.points = [ ( p[0], y + (y - p[1]) ) for p in self.points]
+        return self
         
 class Lines:
     """
