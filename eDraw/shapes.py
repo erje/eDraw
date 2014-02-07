@@ -3,12 +3,14 @@ class Rect:
     An eDraw rectangle shape.
     """
     tag = "RECT"
-    def __init__(self, dose_factor=1.0, height=1.0, width=1.0, x=0.0, y=0.0):
+    def __init__(self, dose_factor=1.0, height=1.0, width=1.0, x=0.0, y=0.0, area_slow = "left", area_fast = 0.0):
         self.dose_factor = dose_factor
         self.height = height
         self.width = width
         self.x = x
         self.y = y
+        self.area_slow = area_slow
+        self.area_fast = area_fast
         
     def bounding_box(self):
         min_x = self.x
@@ -18,16 +20,17 @@ class Rect:
         return (min_x, max_x, min_y, max_y)
 
     def get_attrib(self):
-        return {"dose_factor" : str(self.dose_factor), "height" : str(self.height), "width" : str(self.width), "x" : str(self.x), "y" : str(self.y)}
+        return {"dose_factor" : str(self.dose_factor), "height" : str(self.height), "width" : str(self.width), "x" : str(self.x), "y" : str(self.y), "area_slow" : str(self.area_slow), "area_fast" : str(self.area_fast) + " deg"}
 
 class Polygon:
     """
     An eDraw polygon shape.
     """
     tag = "POLYGON"
-    def __init__(self, points=None, dose_factor=1.0, area_fast = 0.0):
+    def __init__(self, points=None, dose_factor=1.0, area_fast = 0.0, area_slow = "left"):
         self.dose_factor = dose_factor
         self.area_fast = area_fast
+        self.area_slow = area_slow
         if points == None:
             # Careful here! 
             self.points = []
@@ -50,7 +53,7 @@ class Polygon:
 
     def get_attrib(self):
         import re
-        return {"dose_factor" : str(self.dose_factor), "points" : re.sub(r'[\[\]\,]', '', str(self.points)), "area_fast" : str(self.area_fast) + " deg"}
+        return {"dose_factor" : str(self.dose_factor), "points" : re.sub(r'[\[\]\,]', '', str(self.points)), "area_fast" : str(self.area_fast) + " deg", "area_slow" : str(self.area_slow)}
 
     def add(self, point):
         return self.points.append(point)
