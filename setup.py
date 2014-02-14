@@ -2,7 +2,7 @@ from distutils.core import setup
 setup(
 	name = "eDraw",
 	packages = ["eDraw"],
-	version = "0.15",
+	version = "0.16",
 	description = "Scripting interface for eDraw files",
 	author = "Eric R. J. Edwards",
 	author_email = "eric.edwards@physik.uni-halle.de",

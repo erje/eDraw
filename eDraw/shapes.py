@@ -122,5 +122,23 @@ def crect(cx=0.0, cy=0.0, width=1.0, height=1.0, **kwargs):
 def poly(**kwargs):
     return Polygon(**kwargs)
 
+def poly_base_delta(base, delta, **kwargs):
+    """
+    Create polygon by providing a base point (base) as tuple and relative coordinates (delta) as list of tuples.
+    """
+    if "points" in kwargs:
+        raise TypeError("Cannot provide points to poly_base_delta function. Provide base as tuple and delta as list of tuples instead.")
+    tmp_points = [base + d for d in delta] 
+    return Polygon(points = tmp_points, **kwargs)
+
+def poly_incremental(base, incr, **kwargs):
+    """
+    Create polygon by providing a base point (base) as tuple and incremental relative coordinates (incr) as list of tuples.
+    """
+    tmp_points=[base]
+    for i, p in enumerate(incr):
+        tmp_points.append( (tmp_points[i][0] + incr[i][0], tmp_points[i][1] + incr[i][1]) )
+    return Polygon(points = tmp_points, **kwargs)
+
 def line(**kwargs):
     return Lines(**kwargs)

@@ -2,17 +2,20 @@ from .shapes import rect, poly, line
 
 def cross(cx=0.0, cy=0.0, size=10.0):
     h = float(abs(size))
-    return poly( points = [ (cx - h/10, cy + h/2), (cx + h/10, cy + h/2), (cx, cy), (cx + h/2, cy + h/10), (cx + h/2, cy - h/10), (cx, cy), (cx + h/10, cy - h/2), (cx - h/10, cy - h/2), (cx, cy), (cx - h/2, cy - h/10), (cx - h/2, cy + h/10), (cx, cy) ] )
+    return poly( points = [ (cx - h/5, cy + h/2), (cx + h/5, cy + h/2), (cx, cy), (cx + h/2, cy + h/5), (cx + h/2, cy - h/5), (cx, cy), (cx + h/5, cy - h/2), (cx - h/5, cy - h/2), (cx, cy), (cx - h/2, cy - h/10), (cx - h/2, cy + h/5), (cx, cy) ] )
 
 def cross_layer(layer, cx=0.0, cy=0.0, size=10.0):
     """
     Add cross of given size to a layer at point (cx, cy).
     """
     h = float(abs(size))
-    layer.add( poly( points = [ (cx - h/10, cy + h/2), (cx + h/10, cy - h/2), (cx - h/10, cy - h/2), (cx + h/10, cy + h/2) ], area_fast=0 ) )
+    layer.add( poly( points = [ (cx - h/5, cy + h/2), (cx + h/5, cy - h/2), (cx - h/5, cy - h/2), (cx + h/5, cy + h/2) ], area_fast=0 ) )
     layer.add( poly( points = [ (cx - h/2, cy + h/10), (cx + h/2, cy - h/10), (cx + h/2, cy + h/10), (cx - h/2, cy - h/10) ], area_fast=90 ) )
 
 def mm_rect_closed(width=30.0, bar=2.0, gap=1.5, chamfer=0.25):
+    """
+    Demonstration of polygon primitive. h/t C. Lange.
+    """
     w = width
     b = bar
     g = gap
@@ -20,8 +23,6 @@ def mm_rect_closed(width=30.0, bar=2.0, gap=1.5, chamfer=0.25):
     
     cap = 10
 
-    # array holding a single polygon as coordinate pairs
-    #rect_closed_base = Array.new(0) { Array.new(2) }
     rc = poly(points=[(0,0)])
     
     #upper
