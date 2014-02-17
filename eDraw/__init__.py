@@ -77,7 +77,7 @@ class Layer:
     A single process in the SEM. Corresponds to one eDraw layer. Can contain many Shapes.
     """
 
-    def __init__(self, shapes=None, fill_color="#00FF00", fill_opacity=0.5, hidden=False, locked=False, name="Layer", frame_cx=0.0, frame_cy=0.0, frame_size=1.0):
+    def __init__(self, shapes=None, fill_color="#00FF00", fill_opacity=0.5, hidden=False, locked=False, name="Layer", frame_cx=0.0, frame_cy=0.0, frame_size=1.0, sa_oversize = 1.0):
         if shapes == None:
             self.shapes = []
         self.fill_color = fill_color
@@ -89,6 +89,7 @@ class Layer:
         self.frame_cy = frame_cy
         self.frame_size = frame_size
         self.bbox = (0,0,0,0)
+        self.sa_oversize = abs(sa_oversize)
     def __iter__(self):
         self.shapes_index = 0
         return self
@@ -120,7 +121,7 @@ class Layer:
 
         self.frame_cx = (max_x + min_x)/2.0
         self.frame_cy = (max_y + min_y)/2.0
-        self.frame_size = max(abs(max_x - min_x), abs(max_y - min_y))
+        self.frame_size = sa_oversize*max(abs(max_x - min_x), abs(max_y - min_y))
         self.bbox=(min_x,max_x,min_y,max_y)
         return (min_x,max_x,min_y,max_y)
 
