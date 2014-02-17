@@ -121,7 +121,7 @@ class Layer:
 
         self.frame_cx = (max_x + min_x)/2.0
         self.frame_cy = (max_y + min_y)/2.0
-        self.frame_size = sa_oversize*max(abs(max_x - min_x), abs(max_y - min_y))
+        self.frame_size = self.sa_oversize*max(abs(max_x - min_x), abs(max_y - min_y))
         self.bbox=(min_x,max_x,min_y,max_y)
         return (min_x,max_x,min_y,max_y)
 
