@@ -135,13 +135,13 @@ def save(savething, filename="noname", format="ely"):
         elif len(raw_filename.split(".")) == 1:
             filepath[i] = filename + "." + f
 
-    # Next we set the write field for all layers.
+    # Next we set the scanning area for all layers.
     # We do this here, since we can be sure that
     # the sample design is complete. Otherwise, we'd
     # be obliged to insert code at each add...
     for structure in project:
         for layer in structure:
-            layer.write_field()
+            layer.scanning_area()
 
     # Finally, we pass on project and filepath to the 
     # save routine for the appropriate format

@@ -105,7 +105,7 @@ class Layer:
             self.shapes.append(shape)
         return self
 
-    def write_field(self):
+    def scanning_area(self):
         if (len(self.shapes) == 0):
             return (0,0,0,0)
         for i, shape in enumerate(self):
