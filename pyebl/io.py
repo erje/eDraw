@@ -5,15 +5,7 @@ def save_ely(project, filename):
 
     import time
 
-    try:
-        from lxml import etree
-        lxml_import = True
-        #print("Found lxml, using for serialization.")
-    except ImportError:
-        lxml_import = False
-        print(
-            #"Did not find lxml, defaulting to ElementTree for serialization.")
-        import xml.etree.ElementTree as etree
+    from lxml import etree
 
     ELAYOUT = etree.Element("ELAYOUT", {"locked": str(
         project.locked).lower(), "name": project.name, "version": str(project.version)})
@@ -49,12 +41,7 @@ def save_ely(project, filename):
                     etree.Element(shape.tag, shape.get_attrib()))
 
     ELAYOUT = etree.ElementTree(ELAYOUT)
-    if lxml_import:
-        ELAYOUT.write(
-            filename, xml_declaration=True, pretty_print=True, encoding="UTF-8")
-    else:
-        ELAYOUT.write(filename, xml_declaration=True, encoding="UTF-8")
-
+    ELAYOUT.write(filename, xml_declaration=True, pretty_print=True, encoding="UTF-8")
 
 def save_svg(project, filename):
     try:

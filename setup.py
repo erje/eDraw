@@ -2,7 +2,7 @@ from distutils.core import setup
 setup(
 	name = "pyebl",
 	packages = ["pyebl"],
-	version = "0.02",
+	version = "0.03",
 	description = "Scripting interface for .ely files",
 	author = "Eric R. J. Edwards",
 	author_email = "eric.edwards@physik.uni-halle.de",
