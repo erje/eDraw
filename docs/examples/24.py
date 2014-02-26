@@ -1,12 +1,16 @@
-import eDraw as edw
-import eDraw.drawing as draw
+#!/usr/bin/env python
+import os
+WD = os.path.abspath(os.curdir) + '\\'
+
+##########
+import pyebl as edw
 
 import numpy as np
 
-amplitude = 100.0 
+amplitude = 100.0
 wavelength = 100.0
 phase = 0.0
-stripe_length = 1000.0 
+stripe_length = 1000.0
 stripe_width = 5.0
 
 A = amplitude
@@ -32,4 +36,4 @@ points_bottom = list(zip(x_samples, y_bottom))[::-1]
 
 stripe = edw.poly(points = points_top + points_bottom)
 
-edw.save(stripe, "/Users/erje/Programs/eDraw/data/24", format="ely, svg")
+edw.save(stripe, WD + "output/24", format="ely, svg")

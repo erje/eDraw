@@ -1,4 +1,9 @@
-import eDraw as edw
+#!/usr/bin/env python
+import os
+WD = os.path.abspath(os.curdir) + '\\'
+
+##########
+import pyebl as edw
 
 tree = edw.layer(name="fractal_tree", fill_color="#000000")
 
@@ -13,4 +18,4 @@ def frtree(layer, x1=300, y1=550, angle=-90, depth=9):
 
 frtree(tree, x1=300, y1=550, angle=-90, depth=12)
 
-edw.save(tree, "/Users/erje/Programs/eDraw/data/11.ely", format="ely, svg")
+edw.save(tree, WD + "output/11.ely", format="ely, svg")

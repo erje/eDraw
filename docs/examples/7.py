@@ -1,4 +1,9 @@
-import eDraw as edw
+#!/usr/bin/env python
+import os
+WD = os.path.abspath(os.curdir) + '\\'
+
+##########
+import pyebl as edw
 
 side = 3**7 # some big multiple of 3
 sierpinski = edw.layer(name="sierpinski", fill_color="#0000FF")
@@ -22,4 +27,4 @@ def scarpet(layer, x=0, y=0, length=3**7, min_size=9):
 
 scarpet(sierpinski, x=0, y=0, length=3**7, min_size=9)
 
-edw.save(sierpinski, "/Users/erje/Programs/eDraw/data/7", format="ely, svg")
+edw.save(sierpinski, WD + "output/7", format="ely, svg")

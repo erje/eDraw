@@ -26,8 +26,6 @@ docs\examples\6.py
 docs\examples\7.py
 docs\examples\8.py
 docs\examples\9.py
-docs\examples\output\1.ely
-docs\examples\output\1.svg
 docs\examples\output\10.ely
 docs\examples\output\10.svg
 docs\examples\output\11.ely
@@ -72,8 +70,7 @@ docs\examples\output\8.ely
 docs\examples\output\8.svg
 docs\examples\output\9.ely
 docs\examples\output\9.svg
-eDraw\__init__.py
-eDraw\drawing.py
-eDraw\errors.py
-eDraw\io.py
-eDraw\shapes.py
+pyebl\__init__.py
+pyebl\drawing.py
+pyebl\io.py
+pyebl\shapes.py

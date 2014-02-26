@@ -1,21 +1,21 @@
-A scripting program for eDraw. License is LGPLv3+. Requires lxml and svgwrite.
+A scripting program for eDraw format. License is LGPLv3+. Requires lxml and svgwrite.
 
 INSTALLATION
 
-eDraw requires python 3+. Skip below for my recommendation of a python3+ environment if you don't have one.
+pyebl requires python 3+. Skip below for my recommendation of a python3+ environment if you don't have one.
 
-Install eDraw's dependencies:
+Install pyebl's dependencies:
 
 $ pip install svgwrite
 $ pip install lxml
 
 svgwrite is used for generating svg output, and lxml is used for high performance XML parsing/serialization.
 
-Now install eDraw:
+Now install pyebl:
 
-$ pip install eDraw
+$ pip install pyebl
 
-The best eDraw tutorial is installed in the docs/examples directory (see docs/examples/output for reference). Syntax is designed to be similar to matplotlib's pyplot.
+The best pyebl tutorial is installed in the docs/examples directory (see docs/examples/output for reference). Syntax is designed to be similar to matplotlib's pyplot.
 
 ##############################
 
@@ -33,4 +33,4 @@ Don't forget that when you want to work with eDraw, you need to activate the py3
 
 $ activate py3k
 
-Contact me with problems: http://www.github.com/erje/eDraw
+Contact me with problems: http://www.github.com/erje/pyebl

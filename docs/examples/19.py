@@ -1,9 +1,19 @@
-import eDraw as edw
-import eDraw.drawing as draw
+#!/usr/bin/env python
+import os
+WD = os.path.abspath(os.curdir) + '\\'
 
-two_crosses = edw.layer(name="two_crosses") 
+##########
+import pyebl as edw
 
-two_crosses.add(draw.cross(cx=0,cy=0,size=50))
-two_crosses.add(draw.cross(cx=0,cy=0,size=50).move(200, 100))
+def cross(cx=0.0, cy=0.0, size=10.0):
+    h = float(abs(size))
+    across = edw.poly(points=[(cx - h / 5, cy + h / 2), (cx + h / 5, cy + h / 2), (cx, cy), (cx + h / 2, cy + h / 5), (cx + h / 2, cy - h / 5),
+                  (cx, cy), (cx + h / 5, cy - h / 2), (cx - h / 5, cy - h / 2), (cx, cy), (cx - h / 2, cy - h / 5), (cx - h / 2, cy + h / 5), (cx, cy)])
+    return across
 
-edw.save(two_crosses, "/Users/erje/Programs/eDraw/data/19", format="ely, svg")
+two_crosses = edw.layer(name="two_crosses")
+
+two_crosses.add(cross(cx=0,cy=0,size=50))
+two_crosses.add(cross(cx=0,cy=0,size=50).move(200, 100))
+
+edw.save(two_crosses, WD + "output/19", format="ely, svg")
