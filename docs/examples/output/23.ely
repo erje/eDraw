@@ -1,6 +1,6 @@
 <?xml version='1.0' encoding='UTF-8'?>
 <ELAYOUT locked="false" name="Project" version="1.0">
-  <VERSION created="26.2.2014 15:9:36" modified="26.2.2014 15:9:36" number="1.0"/>
+  <VERSION created="26.2.2014 15:46:44" modified="26.2.2014 15:46:44" number="1.0"/>
   <GRID horizontal="1" show="true" snap_to="false" vertical="1"/>
   <LAYER_LIST>
     <LAYER fill_color="#0000FF" fill_opacity="0.5" hidden="false" locked="false" name="IDT_layer"/>
@@ -9,7 +9,7 @@
   </LAYER_LIST>
   <STRUCTURE_LIST>
     <STRUCTURE locked="false" name="23">
-      <VERSION created="26.2.2014 15:9:36" modified="26.2.2014 15:9:36" number="1.0"/>
+      <VERSION created="26.2.2014 15:46:44" modified="26.2.2014 15:46:44" number="1.0"/>
       <INSTANCE_LIST/>
       <LAYER_REFERENCE frame_cx="-0.25" frame_cy="0.0" frame_size="299.5" ref="IDT_layer">
         <RECT area_fast="0.0 deg" area_slow="left" dose_factor="0.5" height="100" width="0.5" x="-150.0" y="-50.0"/>

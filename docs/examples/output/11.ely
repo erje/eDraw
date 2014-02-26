@@ -1,13 +1,13 @@
 <?xml version='1.0' encoding='UTF-8'?>
 <ELAYOUT locked="false" name="Project" version="1.0">
-  <VERSION created="26.2.2014 15:9:34" modified="26.2.2014 15:9:34" number="1.0"/>
+  <VERSION created="26.2.2014 15:46:39" modified="26.2.2014 15:46:39" number="1.0"/>
   <GRID horizontal="1" show="true" snap_to="false" vertical="1"/>
   <LAYER_LIST>
     <LAYER fill_color="#000000" fill_opacity="0.5" hidden="false" locked="false" name="fractal_tree"/>
   </LAYER_LIST>
   <STRUCTURE_LIST>
     <STRUCTURE locked="false" name="Structure">
-      <VERSION created="26.2.2014 15:9:34" modified="26.2.2014 15:9:34" number="1.0"/>
+      <VERSION created="26.2.2014 15:46:39" modified="26.2.2014 15:46:39" number="1.0"/>
       <INSTANCE_LIST/>
       <LAYER_REFERENCE frame_cx="300.0" frame_cy="172.5" frame_size="1056.0" ref="fractal_tree">
         <LINES dose_factor="1.0" points="(300 550) (300 430)"/>

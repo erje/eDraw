@@ -15,7 +15,7 @@ def mm_rect_closed(width=30.0, bar=2.0, gap=1.5, chamfer=0.25):
     c = chamfer
     cap = 10
 
-    rc = poly(points=[(0, 0)])
+    rc = edw.poly(points=[(0, 0)])
 
     # upper
     rc.add((-w / 2, 0))
